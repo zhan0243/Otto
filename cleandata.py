@@ -29,14 +29,6 @@ def cleaneddf():
 
     return [train_df, test_df]
 
-def evaluation(label,pred_label):
-    num = len(label)
-    logloss = 0.0
-    for i in range(num):
-        p = max(min(pred_label[i][label[i]-1],1-10**(-15)),10**(-15))
-        logloss += np.log(p)
-    logloss = -1*logloss/num
-    return logloss
 
 def logloss(act, pred):
 
